@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http>//www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8">
+		<title>Categoria JS</title>
+	</head>
+	
+	<body>
+		
+		<h1>Olá categoria JS</h1>
+		<nav>
+			<ul>			
+				<li>
+					<a th:href="@{/}">Home</a>
+				</li>
+			
+				<li>
+					<a>Categorias</a>
+					
+					<ul>
+									
+						<li>
+							<a th:href="@{/catHTML}">HTML5</a>
+						</li>
+						
+						<li>
+							<a th:href="@{/catCSS}">CSS3</a>
+						</li>
+						
+						<li>
+							<a th:href="@{/catPHP}">PHP</a>
+						</li>
+						
+						<li>
+							<a th:href="@{/catJS}">JavaScript</a>
+						</li>
+						
+					</ul>
+				</li>
+				
+				<li>
+					<a th:href="@{/contato}">Contato</a>
+				</li>
+				
+				<li>
+					<a th:href="@{/quemSomos}">Quem Somos</a>
+				</li>
+				
+				<li>
+					<a th:href="@{/melhoresTemas}">Melhores Temas</a>
+				</li>
+				
+				<li>
+					<a th:href="@{/painel}">Painel</a>
+				</li>
+			</ul>
+		</nav>
+		
+	</body>
+	
+
+</html>
