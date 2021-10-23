@@ -31,4 +31,14 @@ public class ProjetoFinalController {
 		return "catCSS";
 	}
 	
+	@GetMapping("/contato")
+	public String contato() {
+		return "contato";
+	}
+	
+	@GetMapping("/quemSomos")
+	public String quemSomos() {
+		return "quemSomos";
+	}
+	
 }
