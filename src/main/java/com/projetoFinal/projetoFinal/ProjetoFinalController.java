@@ -41,4 +41,14 @@ public class ProjetoFinalController {
 		return "quemSomos";
 	}
 	
+	@GetMapping("/melhoresTemas")
+	public String melhoresTemas() {
+		return "melhroesTemas";
+	}
+	
+	@GetMapping("/painel")
+	public String painel() {
+		return "painel";
+	}
+	
 }
