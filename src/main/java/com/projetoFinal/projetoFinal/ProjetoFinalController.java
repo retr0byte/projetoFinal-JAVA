@@ -43,7 +43,7 @@ public class ProjetoFinalController {
 	
 	@GetMapping("/melhoresTemas")
 	public String melhoresTemas() {
-		return "melhroesTemas";
+		return "melhoresTemas";
 	}
 	
 	@GetMapping("/painel")
