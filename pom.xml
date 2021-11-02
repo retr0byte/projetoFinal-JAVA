@@ -12,11 +12,15 @@
 	<artifactId>projetoFinal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>projetoFinal</name>
-	<description>Projeto final da disciplina DSI</description>
+	<description>Projeto Final - JAVA</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jdbc</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -26,6 +30,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
