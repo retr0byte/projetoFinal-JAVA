@@ -1,0 +1,156 @@
+
+
+body{
+	margin:0;
+	padding:0;
+	
+}
+
+/*conteúdo*/
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: auto;
+    min-height: 100%;
+}
+
+h1 {
+	text-align: center;
+	color: #343a40;
+}
+
+form span {
+	color: #A80000; 
+	font-size: 12px;
+}
+
+.ex {
+	color: #575757;
+	font-size: 12px;	
+}
+
+input[type="text"] {
+	outline: none;
+	width: 100%;
+    height: 25px;
+}
+
+input[type="submit"] {
+	background-color: #fff;
+    text-decoration: none;
+    padding: 7px 65px;
+    color: #343a40;
+    border: solid 1px #343a40;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus{
+	background-color: #343a40 !important;
+	color: #fff !important;
+}
+
+
+textarea {
+	outline: none;
+	width: 100%;
+    height: 100px;
+}
+
+form p:nth-child(5) {
+	text-align: center;
+}
+
+/* erros */
+
+div#mensagensErro{
+	display: none;
+}
+
+div#mensagensErro h2{
+	color: #343a40;
+	border-bottom: 1px solid #343a40;
+}
+
+
+div#erros{
+	background-color: #F8D7DA;
+	color:#721C24;
+	padding: 15px;
+}
+
+div#erros a{
+	font-weight: bold;
+	color:#721C24;
+}
+
+form#formAcessivel{
+	margin: 0 20px;
+}
+
+form#formAcessivel input:focus,
+form#formAcessivel textarea:focus{
+	background-color:#F2E7C4;
+}
+
+.success{
+	background:#D4EDDA;
+	color:#155724;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin-top:20px;
+	padding:20px;
+}
+
+/*responsivo*/
+
+@media (max-width: 499px)
+{
+	section {
+		width: auto;
+		flex-direction: column;
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 605px)
+{
+	section {
+		width: 500px;
+	}
+
+	.contato_bloco {
+		margin: 0px;
+	}
+
+	.icone {
+		width: 75px;
+		height: 75px;
+	}
+
+	.contato_bloco h2 {
+		font-size: 18px;
+	}
+
+	p {
+		font-size: 16px;
+		padding: 0px;
+	}
+}
+
+@media (max-width: 499px)
+{
+	footer {
+		position: relative;
+	}
+}
+
+@media (min-width: 500px)
+{
+	footer {
+		position: absolute;
+	}
+}
