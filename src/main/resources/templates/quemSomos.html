@@ -1,63 +1,164 @@
 <!DOCTYPE html>
-<html xmlns:th="http>//www.thymeleaf.org">
+
+<html xmlns:th="http>//www.thymeleaf.org" lang="pt-br">
+<head>
 	
-	<head>
-		<meta charset="UTF-8">
-		<title>Quem Somos</title>
-	</head>
+	<meta charset="utf-8">
+	<!-- meta viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- favicon -->
+	<link rel="shortcut icon" th:href="@{images/favicon.ico}" type="image/x-icon">
+	<!-- links css -->
+	<link rel="stylesheet" th:href="@{css/quemSomos.css}">
+	<link rel="stylesheet" th:href="@{css/main.css}">
+	<!-- google fonts --> 
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<script src="https://kit.fontawesome.com/068c052113.js" crossorigin="anonymous"></script>
+	<!-- titulo -->
+	<title>Quem somos</title>
 	
-	<body>
-		
-		<h1>Quem Somos</h1>
-		<nav>
-			<ul>			
+</head>
+<body>
+
+	<!-- menu -->
+
+	<header>
+
+		<!-- menu acessivel -->
+        
+        <nav class="menu_acessibilidade">
+
+            <ul>
 				<li>
-					<a th:href="@{/}">Home</a>
+					<a href="#link1" accesskey="1" title="Ser redirecionado para o conteúdo"><span>1</span>ir para o conteúdo</a>
 				</li>
 			
 				<li>
-					<a>Categorias</a>
-					
-					<ul>
-									
-						<li>
-							<a th:href="@{/catHTML}">HTML5</a>
-						</li>
-						
-						<li>
-							<a th:href="@{/catCSS}">CSS3</a>
-						</li>
-						
-						<li>
-							<a th:href="@{/catPHP}">PHP</a>
-						</li>
-						
-						<li>
-							<a th:href="@{/catJS}">JavaScript</a>
-						</li>
-						
-					</ul>
+					<a href="#link2" accesskey="2" title="Ser redirecionado para o menu principal do site"><span>2</span>ir para o menu</a>
 				</li>
-				
+			
 				<li>
-					<a th:href="@{/contato}">Contato</a>
+					<a href="#rodape" accesskey="3" title="Ser redirecionado para o rodapé da página"><span>3</span>ir para o rodapé</a>
 				</li>
-				
+			
 				<li>
-					<a th:href="@{/quemSomos}">Quem Somos</a>
+					<a href="#link4" accesskey="4" title="Ser redirecionado para o formulário de busca"><span>4</span>ir para busca</a>
 				</li>
-				
-				<li>
-					<a th:href="@{/melhoresTemas}">Melhores Temas</a>
-				</li>
-				
-				<li>
-					<a th:href="@{/painel}">Painel</a>
-				</li>
+			
 			</ul>
-		</nav>
-		
-	</body>
-	
 
+        </nav>
+
+        <!-- menu normal -->
+
+      
+		<div class="all" id="link2">
+
+			<div class="box_logo">
+				<a th:href="@{/}"><img th:src="@{images/logo1.png}" alt="logo do site bibliotec" class="logo"></a>
+			</div>
+			<input type="checkbox" id="btn">
+			<label for="btn">&#9776;</label>
+			
+			<nav class="menu_responsivo">
+
+				<ul>
+			        <li class="li_f" id="oi"><a href="#" class="foco">Categorias</a>
+			        	<ul class="menu_categorias" id="listaFoco">
+			            	<li><a th:href="@{/catHTML}" class="foco">HTML5</a>
+			                <li><a th:href="@{/catCSS}" class="foco">CSS3</a>
+			                <li><a th:href="@{/catPHP}" class="foco">PHP</a>
+			                <li><a 	th:href="@{/catJS}" class="foco">javascript</a>
+			            </ul>
+			        </li>
+				        
+			      	<li class="li_f"><a th:href="@{/contato}">Contato</a></li>
+			        <li class="li_f"><a th:href="@{/quemSomos}">Quem somos</a></li>
+			        <li class="li_f"><a th:href="@{/melhoresTemas}">Melhores temas</a></li>
+					<li class="li_f"><a th:href="@{/painel}">Painel</a></li>
+			    </ul>
+			</nav>
+
+			<div class="pesquisa">
+				<form method="post">
+					<label for="link4">Pesquisar Livro : </label>
+					<input type="text" name="pesquisa" id="link4">
+					<button type="submit"><i class="fas fa-search"></i></button>
+				</form>
+			</div>
+
+		</div>  
+
+    </header>
+
+    <!-- conteúdo quem somos --> 
+
+	<main id="link1">
+		
+		<div class="sobre-box">
+			<h1>Quem somos</h1>
+
+			<p>
+				Fundada em 2020 a Bibliotec vem com o objetivo de compartilhar informação com estudantes da área
+				de desenvolvimento web possibilitando que eles tenham acesso fácil e gratuito a livros sobre áreas
+				específicas do Front-end e Back-end. Na nossa página o estudante encontrará livros separados em 4 
+				categorias, são elas: HTML, CSS, PHP, JavaScript. No futuro temos a intenção de diversificar mais o
+				nosso acervo de livros com outras categorias.
+			</p>
+
+			<p>
+			No final de tudo, como já dito antes, nosso objetivo nada mais é do que espalhar informação de forma gratuita e livre para que cada vez mais pessoas tenham acesso a ela.
+			</p>
+			
+			<p>
+			<q>Seja cursioso. Leia muito. Experimente coisas novas. Eu acho que muito do que as pessoas chamam de inteligência apenas se resume a curiosidade.</q>-Aaron Swartz
+			</p>
+		</div>
+		
+		<div class="github-links-wrapper">
+			<h1>Conheça nossos projetos: </h1>
+			
+			<div class="github-links-group">
+				<div class="github-link">
+					<p>Gabriel Castro</p>
+					<a target="_blank" href="https://github.com/gabriielsilva5" title="Link para o github de: Gabriel Castro">
+						<img th:src="@{images/github.svg}" alt="ícone do github">
+					</a>
+				</div>
+	
+				<div class="github-link">
+					<p>Gustavo Arakaki</p>
+					<a target="_blank" href="https://github.com/n3sh-source" title="Link para o github de: Gustavo Arakaki">
+						<img th:src="@{images/github.svg}" alt="ícone do github">
+					</a>
+				</div>
+				
+	
+				<div class="github-link">
+					<p>Luca Pedro</p>
+					<a target="_blank" href="https://github.com/luca2613" title="Link para o github de: Luca Pedro">
+						<img th:src="@{images/github.svg}" alt="ícone do github">
+					</a>
+				</div>
+			</div>
+			
+		</div>
+
+
+	</main>
+
+	<!-- Rodapé -->
+
+	<footer id="rodape">
+		<p>BIBLIOTEC <i class="far fa-copyright" id="icon_footer"></i> 2020 Todos os direitos reservados</p>
+	</footer>
+	
+	<!-- script tab -->
+	<script th:src="@{js/tabMenu.js}"></script>
+
+</body>
 </html>
+
+
+

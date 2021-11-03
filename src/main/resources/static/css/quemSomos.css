@@ -1,0 +1,146 @@
+
+
+body {
+	margin: 0;
+	padding: 0;
+	
+}
+
+
+
+main {
+	max-width: 80%;
+    margin: 5em auto 0px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.sobre-box {
+	flex: 1 1 418px;
+}
+
+.sobre-box h1 {
+	text-align: center;
+}
+
+.sobre-box h2 {
+	font-size: 2em;
+}
+
+.sobre-box:nth-child(2) {
+	position: relative;
+	left: 100px;
+}
+
+
+
+.desenvolvedor img {
+	max-width: 100%;
+    display: block;
+    border-radius: 50%;
+    height: 150px;
+}
+
+.github-links-wrapper{
+	display: flex;
+	width: 40%;
+	margin-left: 5%;
+	flex-direction: column;
+}
+
+.github-links-wrapper img{
+	width: 50px;
+}
+
+.github-links-group{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.github-link{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/*responsivo*/
+
+@media (max-width: 274px)
+{
+	main 
+	{
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 440px)
+{
+	
+	.sobre-box
+	{
+		text-align: center;
+	}
+
+	.sobre-box:nth-child(2) 
+	{
+		position: relative;
+		left: 0px;
+	}
+	.github-links-group{
+		flex-direction: column;
+	}
+
+}
+
+@media(min-width: 540px)
+{
+	footer {
+		position: absolute;
+		bottom: 0px;
+	}
+}
+
+@media (max-width: 950px)
+{
+	.github-links-wrapper{
+		width: 100%;
+		margin: 10% 0 10% 0;
+	}
+}
+
+@media (max-width: 1043px)
+{
+	
+
+	.sobre-box h2
+	{
+		text-align: center;
+	} 
+
+	.sobre-box:nth-child(2) 
+	{
+		position: relative;
+		left: 0px;
+	}
+
+	/*footer {
+		position: absolute;
+	}*/
+	footer {
+		position: relative;
+	}
+
+
+}
+
+
+
+@media (min-width: 1044px)
+{
+	footer {
+		position: absolute;
+	}
+}
