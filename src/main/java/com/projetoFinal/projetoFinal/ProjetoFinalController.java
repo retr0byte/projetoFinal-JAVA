@@ -51,4 +51,9 @@ public class ProjetoFinalController {
 		return "painel";
 	}
 	
+	@GetMapping("/livro")
+	public String livro() {
+		return "livro";
+	}
+	
 }
