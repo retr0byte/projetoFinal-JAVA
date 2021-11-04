@@ -1,63 +1,174 @@
 <!DOCTYPE html>
-<html xmlns:th="http>//www.thymeleaf.org">
+
+<html xmlns:th="http>//www.thymeleaf.org" lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<!-- meta viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- favicon -->
+	<link rel="shortcut icon" th:href="@{images/favicon.ico}" type="image/x-icon">
+	<!-- links css -->
+	<link rel="stylesheet" th:href="@{css/categoria.css}">
+	<link rel="stylesheet" th:href="@{css/main.css}">
+	<!-- google fonts --> 
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->	
+	<script src="https://kit.fontawesome.com/068c052113.js" crossorigin="anonymous"></script>
+	<!-- titulo -->
+	<title>Categoria Javascript</title>
 	
-	<head>
-		<meta charset="UTF-8">
-		<title>Categoria JS</title>
-	</head>
+</head>
+<body>
+<!-- menu -->
 	
-	<body>
-		
-		<h1>Olá categoria JS</h1>
-		<nav>
-			<ul>			
+	<header>
+
+		<!-- menu acessivel -->
+        
+        <nav class="menu_acessibilidade">
+
+            <ul>
 				<li>
-					<a th:href="@{/}">Home</a>
+					<a href="#link1" accesskey="1" title="Ser redirecionado para o conteúdo"><span>1</span>ir para o conteúdo</a>
 				</li>
 			
 				<li>
-					<a>Categorias</a>
-					
-					<ul>
-									
-						<li>
-							<a th:href="@{/catHTML}">HTML5</a>
-						</li>
-						
-						<li>
-							<a th:href="@{/catCSS}">CSS3</a>
-						</li>
-						
-						<li>
-							<a th:href="@{/catPHP}">PHP</a>
-						</li>
-						
-						<li>
-							<a th:href="@{/catJS}">JavaScript</a>
-						</li>
-						
-					</ul>
+					<a href="#link2" accesskey="2" title="Ser redirecionado para o menu principal do site"><span>2</span>ir para o menu</a>
 				</li>
-				
+			
 				<li>
-					<a th:href="@{/contato}">Contato</a>
+					<a href="#rodape" accesskey="3" title="Ser redirecionado para o rodapé da página"><span>3</span>ir para o rodapé</a>
 				</li>
-				
+			
 				<li>
-					<a th:href="@{/quemSomos}">Quem Somos</a>
+					<a href="#link4" accesskey="4" title="Ser redirecionado para o formulário de busca"><span>4</span>ir para busca</a>
 				</li>
-				
-				<li>
-					<a th:href="@{/melhoresTemas}">Melhores Temas</a>
-				</li>
-				
-				<li>
-					<a th:href="@{/painel}">Painel</a>
-				</li>
+			
 			</ul>
-		</nav>
-		
-	</body>
-	
 
+        </nav>
+
+
+        <!-- menu normal -->
+
+      
+		<div class="all" id="link2">
+
+			<div class="box_logo">
+				<a th:href="@{/}"><img th:src="@{images/logo1.png}" alt="logo do site bibliotec" class="logo"></a>
+			</div>
+			<input type="checkbox" id="btn">
+			<label for="btn">&#9776;</label>
+			
+			<nav class="menu_responsivo">
+
+				<ul>
+			        <li class="li_f" id="oi"><a href="#" class="foco">Categorias</a>
+			        	<ul class="menu_categorias" id="listaFoco">
+			            	<li><a th:href="@{/catHTML}" class="foco">HTML5</a>
+			                <li><a th:href="@{/catCSS}" class="foco">CSS3</a>
+			                <li><a th:href="@{/catPHP}" class="foco">PHP</a>
+			                <li><a 	th:href="@{/catJS}" class="foco">javascript</a>
+			            </ul>
+			        </li>
+				        
+			      	<li class="li_f"><a th:href="@{/contato}">Contato</a></li>
+			        <li class="li_f"><a th:href="@{/quemSomos}">Quem somos</a></li>
+			        <li class="li_f"><a th:href="@{/melhoresTemas}">Melhores temas</a></li>
+			        <li class="li_f"><a th:href="@{/painel}">Painel</a></li>
+			    </ul>
+			</nav>
+
+			<div class="pesquisa">
+				<form method="post">
+					<label for="link4">Pesquisar Livro : </label>
+					<input type="text" name="pesquisa" id="link4">
+					<button type="submit"><i class="fas fa-search"></i></button>
+				</form>
+			</div>
+
+		</div>  
+
+    </header>
+    
+     <!-- section livros Js -->
+	
+	<section id="link1">
+		<h1 class="titulo">Livros sobre a JavaScript:</h1>
+		<div class="section-recomendados">
+			<div>
+				<a th:href="@{/livro}"><img th:src="@{images/js3.jpg}" alt="capa do livro JavaScript: learn javascript with ease"></a>
+				<p><a th:href="@{/livro}" class="link_livro">JavaScript: JavaScript For Beginners</a></p>
+				<p>Sthepen Blumenthal</p>
+				<a th:href="@{/livro}">Baixar</a>
+			</div>
+
+			<div>
+				<a th:href="@{/livro}"><img th:src="@{images/js1.jpg}" alt="capa do livro Web Animation using JavaScript"></a>
+				<p><a th:href="@{/livro}" class="link_livro">Web Animation using JavaScript</a></p>
+				<p>Julian Shapiro</p>
+				<a th:href="@{/livro}">Baixar</a>
+			</div>
+
+			<div>
+				<a th:href="@{/livro}"><img th:src="@{images/js2.jpg}" alt="capa do livro JavaScript & jQuery Interactive Front-End Development"></a>
+				<p><a th:href="@{/livro}" class="link_livro">JavaScript & jQuery Interactive</a></p>
+				<p>Jon Duckett</p>
+				<a th:href="@{/livro}">Baixar</a>
+			</div>
+
+			<div>
+				<a th:href="@{/livro}"><img th:src="@{images/js4.jpg}" alt="capa do livro javascript: Javascript Programming For Absolute Beginners"></a>
+				<p><a th:href="@{/livro}" class="link_livro">Javascript Programming For Absolute Beginners</a></p>
+				<p>William Sullivan</p>
+				<a th:href="@{/livro}">Baixar</a>
+			</div>
+			<div>
+				<a th:href="@{/livro}"><img th:src="@{images/js5.jpg}" alt="capa do livro Google Maps JavaScript API Cookbook: Over 50 recipes to help you create web maps and GIS web"></a>
+				<p><a th:href="@{/livro}" class="link_livro">Google Maps JavaScript API Cookbook</a></p>
+				<p>Alper Dincer e Balkan</p>
+				<a th:href="@{/livro}">Baixar</a>
+			</div>
+
+			<div>
+				<a th:href="@{/livro}"><img th:src="@{images/js6.jpg}" alt="capa do livro SitePoint Full Stack JavaScript Development with MEAN, MongoDB Express AngularJS and Node.js"></a>
+				<p><a th:href="@{/livro}" class="link_livro">SitePoint Full Stack JavaScript</a></p>
+				<p>Colin J Adam Bretz</p>
+				<a th:href="@{/livro}">Baixar</a>
+			</div>
+
+			<div>
+				<a th:href="@{/livro}"><img th:src="@{images/js7.jpg}" alt="capa do livro Javascript: Novice to Ninja"></a>
+				<p><a th:href="@{/livro}" class="link_livro">Javascript: Novice to Ninja</a></p>
+				<p>Darren Jones</p>
+				<a th:href="@{/livro}">Baixar</a>
+			</div>
+
+			<div>
+				<a th:href="@{/livro}"><img th:src="@{images/js8.jpg}" alt="capa do livro Django JavaScript Integration AJAX and jQuery"></a>
+				<p><a th:href="@{/livro}" class="link_livro">Django JavaScript Integration</a></p>
+				<p>Jonathan Hayward</p>
+				<a th:href="@{/livro}">Baixar</a>
+			</div>
+		</div>
+		
+	</section>
+
+	<div class="pagination">
+		  <a th:href="@{/catJS}">&laquo;</a>
+		  <a th:href="@{/catJS}">1</a>
+		  <a th:href="@{/catJS}">2</a>
+		  <a th:href="@{/catJS}">3</a>
+		  <a th:href="@{/catJS}">4</a>
+		  <a th:href="@{/catJS}">5</a>
+		  <a th:href="@{/catJS}">6</a>
+		  <a th:href="@{/catJS}">&raquo;</a>
+	</div>
+    
+    <footer id="rodape">
+		<p>BIBLIOTEC <i class="far fa-copyright" id="icon_footer"></i> 2020 Todos os direitos reservados</p>
+	</footer>
+	<!-- script tab -->
+	<script th:src="@{js/tabMenu.js}"></script>
+</body>
 </html>
