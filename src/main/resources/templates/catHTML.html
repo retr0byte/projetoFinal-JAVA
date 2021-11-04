@@ -2,61 +2,177 @@
 <html xmlns:th="http>//www.thymeleaf.org">
 	
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="utf-8">
+		<!-- meta viewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- favicon -->
+		<link rel="shortcut icon" th:href="@{images/favicon.ico}" type="image/x-icon">
+		<!-- links css -->
+		<link rel="stylesheet" th:href="@{css/categoria.css}">
+		<link rel="stylesheet" th:href="@{css/main.css}">
+		<!-- google fonts --> 
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<!-- fontawesome -->	
+		<script src="https://kit.fontawesome.com/068c052113.js" crossorigin="anonymous"></script>
+		<!-- titulo -->
 		<title>Categoria HTML</title>
 	</head>
 	
 	<body>
 		
-		<h1>Olá categoria HTML</h1>
-		<nav>
-			<ul>			
-				<li>
-					<a th:href="@{/}">Home</a>
-				</li>
-			
-				<li>
-					<a>Categorias</a>
-					
+		<!-- menu -->
+	
+		<header>
+	
+			<!-- menu acessivel -->
+	        
+	        <nav class="menu_acessibilidade">
+	
+	            <ul>
+					<li>
+						<a href="#link1" accesskey="1" title="Ser redirecionado para o conteúdo"><span>1</span>ir para o conteúdo</a>
+					</li>
+				
+					<li>
+						<a href="#link2" accesskey="2" title="Ser redirecionado para o menu principal do site"><span>2</span>ir para o menu</a>
+					</li>
+				
+					<li>
+						<a href="#rodape" accesskey="3" title="Ser redirecionado para o rodapé da página"><span>3</span>ir para o rodapé</a>
+					</li>
+				
+					<li>
+						<a href="#link4" accesskey="4" title="Ser redirecionado para o formulário de busca"><span>4</span>ir para busca</a>
+					</li>
+				
+				</ul>
+	
+	        </nav>
+	
+	
+	        <!-- menu normal -->
+	
+	      
+			<div class="all" id="link2">
+	
+				<div class="box_logo">
+					<a th:href="@{/}"><img th:src="@{images/logo1.png}" alt="logo do site bibliotec" class="logo"></a>
+				</div>
+				<input type="checkbox" id="btn">
+				<label for="btn">&#9776;</label>
+				
+				<nav class="menu_responsivo">
+	
 					<ul>
-									
-						<li>
-							<a th:href="@{/catHTML}">HTML5</a>
-						</li>
-						
-						<li>
-							<a th:href="@{/catCSS}">CSS3</a>
-						</li>
-						
-						<li>
-							<a th:href="@{/catPHP}">PHP</a>
-						</li>
-						
-						<li>
-							<a th:href="@{/catJS}">JavaScript</a>
-						</li>
-						
-					</ul>
-				</li>
-				
-				<li>
-					<a th:href="@{/contato}">Contato</a>
-				</li>
-				
-				<li>
-					<a th:href="@{/quemSomos}">Quem Somos</a>
-				</li>
-				
-				<li>
-					<a th:href="@{/melhoresTemas}">Melhores Temas</a>
-				</li>
-				
-				<li>
-					<a th:href="@{/painel}">Painel</a>
-				</li>
-			</ul>
-		</nav>
+				        <li class="li_f" id="oi"><a href="#" class="foco">Categorias</a>
+				        	<ul class="menu_categorias" id="listaFoco">
+				            	<li><a th:href="@{/catHTML}" class="foco">HTML5</a>
+				                <li><a th:href="@{/catCSS}" class="foco">CSS3</a>
+				                <li><a th:href="@{/catPHP}" class="foco">PHP</a>
+				                <li><a 	th:href="@{/catJS}" class="foco">javascript</a>
+				            </ul>
+				        </li>
+					        
+				      	<li class="li_f"><a th:href="@{/contato}">Contato</a></li>
+				        <li class="li_f"><a th:href="@{/quemSomos}">Quem somos</a></li>
+				        <li class="li_f"><a th:href="@{/melhoresTemas}">Melhores temas</a></li>
+				        <li class="li_f"><a th:href="@{/painel}">Painel</a></li>
+				    </ul>
+				</nav>
+	
+				<div class="pesquisa">
+					<form method="post">
+						<label for="link4">Pesquisar Livro : </label>
+						<input type="text" name="pesquisa" id="link4">
+						<button type="submit"><i class="fas fa-search"></i></button>
+					</form>
+				</div>
+	
+			</div>  
+	
+	    </header>
 		
+		<!-- section livros HTML -->
+			<section id="link1">
+				<h1 class="titulo">Livros sobre a HTML:</h1>
+				<div class="section-recomendados">
+					<div>
+						<a th:href="@{/livro}"><img th:src="@{images/html1.jpg}" alt="capa do livro Pro HTML5 Games: Learn to Build your Own Games using HTML5 and JavaScript"></a>
+						<p><a th:href="@{/livro}" class="link_livro">HTML5: Pro HTML5 Games</a></p>
+						<p>Aditya Ravi</p>
+						<a th:href="@{/livro}">Baixar</a>
+					</div>
+		
+					<div>
+						<a th:href="@{/livro}"><img th:src="@{images/html2.jpg}" alt="capa do livro HTML5 and JavaScript Projects: Build on your Basic Knowledge of HTML5 and JavaScript to Create"></a>
+						<p><a th:href="@{/livro}" class="link_livro">HTML5 and JavaScript Projects</a></p>
+						<p>Jeanine Meyer</p>
+						<a th:href="@{/livro}">Baixar</a>
+					</div>
+		
+					<div>
+						<a th:href="@{/livro}"><img th:src="@{images/html3.jpg}" alt="capa do livro The Essential Guide to HTML5: Using Games to Learn HTML5 and JavaScript"></a>
+						<p><a th:href="@{/livro}" class="link_livro">The Essential Guide to HTML5</a></p>
+						<p>Jeanine Meyer</p>
+						<a th:href="@{/livro}">Baixar</a>
+					</div>
+		
+					<div>
+						<a th:href="@{/livro}"><img th:src="@{images/html4.jpg}" alt="capa do livro Pro HTML5 and CSS3 Design Patterns"></a>
+						<p><a  th:href="@{/livro}" class="link_livro">Pro HTML5 and CSS3 Design Patterns</a></p>
+						<p>Michael Bowers</p>
+						<a th:href="@{/livro}">Baixar</a>
+					</div>
+					<div>
+						<a th:href="@{/livro}"><img th:src="@{images/html5.jpg}" alt="capa do livro HTML5 Games Most Wanted: Build the Best HTML5 Games"></a>
+						<p><a th:href="@{/livro}" class="link_livro">HTML5 Games Most Wanted</a></p>
+						<p>Egor Kuryanovich</p>
+						<a th:href="@{/livro}">Baixar</a>
+					</div>
+		
+					<div>
+						<a th:href="@{/livro}"><img th:src="@{images/html6.jpg}" alt="capa do livro Pro HTML5 with Visual Studio 2015"></a>
+						<p><a th:href="@{/livro}" class="link_livro">Pro HTML5 with Visual Studio 2015</a></p>
+						<p>Mark J</p>
+						<a th:href="@{/livro}">Baixar</a>
+					</div>
+		
+					<div>
+						<a th:href="@{/livro}"><img th:src="@{images/html7.jpg}" alt="capa do livro HTML5 Game Development Insights"></a>
+						<p><a th:href="@{/livro}" class="link_livro">HTML5 Game Development Insights</a></p>
+						<p>Colt McAnlis</p>
+						<a th:href="@{/livro}">Baixar</a>
+					</div>
+		
+					<div>
+						<a th:href="@{/livro}"><img th:src="@{images/html8.jpg}" alt="capa do livro HTML5 and JavaScript Projects"></a>
+						<p><a th:href="@{/livro}" class="link_livro">HTML5 and JavaScript Projects</a></p>
+						<p>Jeanine Meyer</p>
+						<a th:href="@{/livro}">Baixar</a>
+					</div>
+				</div>
+				
+			</section>
+		
+		<!-- paginação -->
+	
+		<div class="pagination">
+		  <a th:href="@{/}">&laquo;</a>
+		  <a th:href="@{/}">1</a>
+		  <a th:href="@{/}">2</a>
+		  <a th:href="@{/}">3</a>
+		  <a th:href="@{/}">4</a>
+		  <a th:href="@{/}">5</a>
+		  <a th:href="@{/}">6</a>
+		  <a th:href="@{/}">&raquo;</a>
+		</div>
+
+   		<!-- Rodapé -->
+	    <footer id="rodape">
+			<p>BIBLIOTEC <i class="far fa-copyright" id="icon_footer"></i> 2020 Todos os direitos reservados</p>
+		</footer>
+		<!-- script tab -->
+		<script th:src="@{js/tabMenu.js}"></script>		
 	</body>
 	
 
