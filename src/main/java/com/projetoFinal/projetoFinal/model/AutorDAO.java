@@ -29,4 +29,9 @@ public class AutorDAO {
 		return autores;
 	}
 	
+	public void delAutor(int id) {
+		String sql = "DELETE FROM autor WHERE id = ?";
+		jdbc.update(sql, new Object[] {id});
+	}
+	
 }

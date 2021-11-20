@@ -16,4 +16,8 @@ public class AutorService {
 		return adao.getAutoresPainel();
 	}
 	
+	public void delAutor(int id) {
+		adao.delAutor(id);
+	}
+	
 }
