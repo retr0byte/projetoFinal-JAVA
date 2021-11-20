@@ -1,0 +1,101 @@
+* {
+	margin: 0px;
+	padding:0px;
+	font-family: "Calibri";
+}
+
+.centro-pag {
+	margin: 50px;
+}
+
+.centro-pag p {
+	font-family: Montserrat;
+	color: #343a40;
+	font-size: 20px;
+}
+
+
+#divUniao {
+	background-color: white;
+	width: 80vw;
+}
+
+.menu-lateral {
+	width: 20vw;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	background-color: #343a40;
+}
+
+
+.parte-menu:nth-child(1) {
+	display: flex;
+	flex-direction: column;
+}
+
+.logo-lateral {
+	display: flex;
+	justify-content: center;
+	margin: 50px 0px;
+}
+
+.itens-lateral {
+	display: flex;
+	
+}
+
+.itens-lateral ul {
+	position: relative;
+	left: 20px;
+	width: 80%;
+}
+
+.itens-lateral ul li {
+	margin: 5px 0px;
+	list-style: none;
+	padding: 5px 0px 5px 20px;
+	margin-bottom: 20px;
+}
+
+.itens-lateral ul li a {
+	text-decoration: none;
+}
+
+.itens-lateral ul li a span {
+	color: white;
+}
+ 
+.fa-home {
+	margin-right: 10px;
+	color: white;
+}
+
+.fa-cog {
+	margin-right: 10px;
+	color: white;
+}
+
+.fa-power-off {
+	color: #D9450D;
+	margin: 0px 10px 0px 30px
+}
+.parte-menu:nth-child(2) {
+    position: absolute;
+    bottom: 10%;
+}
+
+.parte-menu:nth-child(2) a span {
+	color: #D9450D;
+	text-decoration: none;
+}
+
+.parte-menu:nth-child(2) a {
+	text-decoration: none;
+}
+
+main {
+	display: flex;
+	padding: 0px;
+	margin: 0px;
+}

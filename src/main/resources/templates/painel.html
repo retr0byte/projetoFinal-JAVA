@@ -2,16 +2,62 @@
 <html xmlns:th="http>//www.thymeleaf.org">
 	
 	<head>
-		<meta charset="UTF-8">
-		<title>painel</title>
+		<meta charset="utf-8">
+		<!-- meta viewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- favicon -->
+		<link rel="shortcut icon" th:href="@{images/favicon.ico}" type="image/x-icon">
+		<!-- links css -->
+		<link rel="stylesheet" th:href="@{css/painel.css}">
+		<!-- google fonts --> 
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<!-- fontawesome -->
+		<script src="https://kit.fontawesome.com/068c052113.js" crossorigin="anonymous"></script>
+		<!-- titulo -->
+		<title>Painel</title>
 	</head>
 	
 	<body>
 		
-		<h1>Painel</h1>
-		<a th:href="@{/}">Home</a>
+		<main>
+			<div class="menu-lateral">
+				<div class="parte-menu">
+					<div class="logo-lateral">
+						<a th:href="@{/}"><img th:src="@{images/logo1.png}" class="img-lateral"></a>
+					</div>
+			
+					<div class="itens-lateral">
+						<ul>
+							<li><a th:href="@{/}"><i class="fas fa-home"></i><span>Painel</span></a></li>
+							<li><a th:href="@{/}"><i class="fas fa-cog"></i><span>Categorias</span></a></li>
+							<li><a th:href="@{/}"><i class="fas fa-cog"></i><span>Autores</span></a></li>
+							<li><a th:href="@{/}"><i class="fas fa-cog"></i><span>Livros</span></a></li>
+						</ul>
+					</div>
+				</div>
+			
+				<div class="parte-menu">
+					<i class="fas fa-power-off"></i><a th:href="@{/}" id="btn-sair"><span>Home</span></a>
+				</div>
+			</div>
+			
+			<div id="divUniao">
+				<section>
+					<div class="centro-pag">
+						<p>Seja muito bem vindo(a)</p>
+						<br>
+						<br>
+						<p>Aqui você encontrará uma série de opções para que possa<br>configurar algumas partes do seu site.</p>
+						<br>
+						<br>
+						<p>Em caso de dúvidas, entrar em contato no e-mail: <span>bibliotec@gmail.com</span></p>
+					</div>
+				</section>
+			</div>
+			
+		</main>
 		
-		
+			
 	</body>
 	
 
