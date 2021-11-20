@@ -11,26 +11,6 @@ public class ProjetoFinalController {
 		return "index";
 	}
 	
-	@GetMapping("/catPHP")
-	public String pagCatPHP() {
-		return "catPHP";
-	}
-	
-	@GetMapping("/catJS")
-	public String pagCatJS() {
-		return "catJS";
-	}
-	
-	@GetMapping("/catHTML")
-	public String pagCatHTML() {
-		return "catHTML";
-	}
-	
-	@GetMapping("/catCSS")
-	public String pagCatCSS() {
-		return "catCSS";
-	}
-	
 	@GetMapping("/contato")
 	public String contato() {
 		return "contato";
