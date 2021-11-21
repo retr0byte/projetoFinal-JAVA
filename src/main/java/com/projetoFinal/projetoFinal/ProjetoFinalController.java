@@ -6,11 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ProjetoFinalController {
 	
-	@GetMapping("/")
-	public String principal() {
-		return "index";
-	}
-	
+
 	@GetMapping("/contato")
 	public String contato() {
 		return "contato";
@@ -34,6 +30,25 @@ public class ProjetoFinalController {
 	@GetMapping("/livro")
 	public String livro() {
 		return "livro";
+	}
+	
+	@GetMapping("/pcategorias")
+	public String pcategorias() {
+		return "pcategorias";
+	}
+	
+	@GetMapping("/plivros")
+	public String plivros() {
+		return "plivros";
+	}
+	
+	@GetMapping("/pcriarcataut")
+	public String pcriarcataut() {
+		return "pcriarcataut";
+	}
+	@GetMapping("/pcriarlivros")
+	public String pcriarlivros() {
+		return "pcriarlivros";
 	}
 	
 }

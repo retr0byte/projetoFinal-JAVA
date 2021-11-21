@@ -36,5 +36,15 @@ public class LivroController {
 		model.addAttribute("livros",livros);
 		return "livros";
 	}
+	
+
+	@GetMapping("/")
+	public String listarTodosLivros(Model model){
+		LivroService ls = context.getBean(LivroService.class);
+		List<Map<String, Object>> livros = ls.getAllLivros();
+		model.addAttribute("livros",livros);
+		return "index";
+			
+	}
 
 }

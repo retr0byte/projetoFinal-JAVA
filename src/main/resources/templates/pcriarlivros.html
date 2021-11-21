@@ -14,7 +14,7 @@
 		<!-- fontawesome -->
 		<script src="https://kit.fontawesome.com/068c052113.js" crossorigin="anonymous"></script>
 		<!-- titulo -->
-		<title>Painel</title>
+		<title>Painel criar</title>
 	</head>
 	
 	<body>
@@ -43,15 +43,50 @@
 			
 			<div id="divUniao">
 				<section>
-					<div class="centro-pag">
-						<p>Seja muito bem vindo(a)</p>
-						<br>
-						<br>
-						<p>Aqui você encontrará uma série de opções para que possa<br>configurar algumas partes do seu site.</p>
-						<br>
-						<br>
-						<p>Em caso de dúvidas, entrar em contato no e-mail: <span>bibliotec@gmail.com</span></p>
+					<div class="centroListagem">
+					<div class="tituloListagem">
+						<h1>Adicionar registro:</h1>
 					</div>
+
+					<div class="itensListagem">
+						<div class="formuNewPromo">
+							<form method="POST" enctype="multipart/form-data">
+								<div class="box-form-geral">
+									<div>
+										<label for="nome">NOME:</label>
+									
+										<input type="text" name="nome" id="nome" required>
+									</div>
+								</div>
+								
+								<div class="box-form-geral">
+									<div>
+										<label for="categoria">CATEGORIA:</label>
+									
+										<input type="text" name="categoria" id="categoria" required>
+									</div>
+								</div>
+								
+								<div class="box-form-geral">
+									<div>
+										<label for="autor">AUTOR:</label>
+									
+										<input type="text" name="autor" id="autor" required>
+									</div>
+								</div>
+								
+								<div class="box-form-geral">
+									<div>
+										<button type="submit">Criar registro</button>
+									</div>
+									
+								</div>
+							</form>
+							
+						</div>
+					</div>
+
+				</div>
 				</section>
 			</div>
 			

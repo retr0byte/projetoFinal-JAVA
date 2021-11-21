@@ -44,4 +44,16 @@ public class LivroDAO {
 		return livros;
 	}
 	
+	public List<Map<String, Object>> getAllLivros(){
+		String sql = "SELECT l.cd_livro, l.nm_livro, c.nm_categoria, a.nm_autor "
+				+ "FROM livro l, categoria c, autor a "
+				+ "WHERE l.cd_categoria = c.cd_categoria AND "
+				+ "l.cd_autor = a.cd_autor "
+				+ "order by l.cd_livro desc";
+		
+		List<Map<String, Object>> livros = (List<Map<String, Object>>) jdbc.queryForList(sql);
+		return livros;
+		
+	}
+	
 }

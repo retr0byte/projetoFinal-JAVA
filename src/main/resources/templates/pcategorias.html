@@ -41,16 +41,43 @@
 				</div>
 			</div>
 			
+			<!-- conteudo -->
+			
 			<div id="divUniao">
 				<section>
-					<div class="centro-pag">
-						<p>Seja muito bem vindo(a)</p>
-						<br>
-						<br>
-						<p>Aqui você encontrará uma série de opções para que possa<br>configurar algumas partes do seu site.</p>
-						<br>
-						<br>
-						<p>Em caso de dúvidas, entrar em contato no e-mail: <span>bibliotec@gmail.com</span></p>
+					<div class="centroListagem">
+						<div class="tituloListagem">
+							<h1>Listagem:</h1>
+						</div>
+						
+						<div class="novoItemListagem">
+							<div class="btnListagem">
+								<a th:href="@{/}">Adicionar novo<i class="fas fa-plus-circle"></i></a>
+							</div>
+						</div>
+	
+						<div class="itensListagem">
+							<table>
+								<tr>
+									<th>Id</th>
+									<th>Nome</th>
+									<th>Alterar</th>
+									<th>Excluir</th>
+								</tr>
+								<tr>
+									<td>id vindo do banco</td>
+									<td>nome vindo do banco</td>
+					
+									<td><a th:href="@{/}"><i class="fas fa-pencil-alt"></i></a></td>
+					
+					
+					
+									<td><a th:href="@{/}" class="btn-exclui-p"><i class="fas fa-trash-alt"></i></a></td>
+								</tr>
+							</table>
+							
+						</div>
+	
 					</div>
 				</section>
 			</div>
