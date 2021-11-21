@@ -20,4 +20,10 @@ public class CategoriaDAO {
 		jdbc = new JdbcTemplate(dataSource);
 	}
 	
+	public void cadCategoria(Categoria cat) {
+		String sql = "INSERT INTO categoria (nm_Categoria) VALUES (?)";
+		
+		jdbc.update(sql, new Object[] { cat.getNm_categoria() });
+	}
+	
 }
