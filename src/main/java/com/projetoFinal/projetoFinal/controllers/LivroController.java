@@ -9,7 +9,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.projetoFinal.projetoFinal.model.Livro;
 import com.projetoFinal.projetoFinal.model.LivroService;
@@ -57,6 +59,20 @@ public class LivroController {
 		model.addAttribute("cd_autor",mapa.get("cd_autor"));
 		return "livro";
 			
+	}
+	
+	@GetMapping("/pcriarlivros")
+	public String formLivro(Model model) {
+		model.addAttribute("pcriarlivros",new Livro());
+		return "pcriarlivros";
+	}
+	
+	@PostMapping("/pcriarlivros")
+	public String postLivro(@ModelAttribute Livro li,
+							Model model) {
+		LivroService ls = context.getBean(LivroService.class);
+		ls.inserirLivro(li);
+		return "plivros";
 	}
 	
 }

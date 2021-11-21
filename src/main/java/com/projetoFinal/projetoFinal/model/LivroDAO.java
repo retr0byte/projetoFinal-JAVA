@@ -69,4 +69,17 @@ public class LivroDAO {
 		return jdbc.queryForMap(sql,obj);
 	}
 	
+	public void inserirLivro(Livro livro) {
+		String sql = "insert into livro(nm_livro,ds_livro,cd_autor,cd_categoria) "+
+					 "VALUES (?,?,?,?)";
+		
+		Object[] obj = new Object[4];
+		obj[0] = livro.getNm_livro();
+		obj[1] = livro.getDs_livro();
+		obj[2] = livro.getCd_autor();
+		obj[3] = livro.getCd_categoria();
+		jdbc.update(sql, obj);
+
+	}
+	
 }

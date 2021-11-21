@@ -46,9 +46,9 @@ public class ProjetoFinalController {
 	public String pcriarcataut() {
 		return "pcriarcataut";
 	}
-	@GetMapping("/pcriarlivros")
-	public String pcriarlivros() {
-		return "pcriarlivros";
-	}
 	
+	@GetMapping("/sucesso")
+	public String sucesso() {
+		return "sucesso";
+	}
 }

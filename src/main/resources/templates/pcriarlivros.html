@@ -50,20 +50,20 @@
 
 					<div class="itensListagem">
 						<div class="formuNewPromo">
-							<form method="POST" enctype="multipart/form-data">
+							<form action="#" th:action="@{/pcriarlivros}" method="post" th:object="${pcriarlivros}" enctype="multipart/form-data">
 								<div class="box-form-geral">
 									<div>
 										<label for="nome">NOME:</label>
 									
-										<input type="text" name="nome" id="nome" required>
+										<input type="text" th:field="*{nm_livro}" id="nome" required>
 									</div>
 								</div>
 								
 								<div class="box-form-geral">
 									<div>
-										<label for="categoria">CATEGORIA:</label>
+										<label for="descricao">DESCRIÇÃO:</label>
 									
-										<input type="text" name="categoria" id="categoria" required>
+										<textarea th:field="*{ds_livro}"></textarea>
 									</div>
 								</div>
 								
@@ -71,9 +71,18 @@
 									<div>
 										<label for="autor">AUTOR:</label>
 									
-										<input type="text" name="autor" id="autor" required>
+										<input type="text" th:field="*{cd_autor}" id="autor" required>
 									</div>
 								</div>
+								
+								<div class="box-form-geral">
+									<div>
+										<label for="categoria">CATEGORIA:</label>
+									
+										<input type="text" th:field="*{cd_categoria}" id="categoria" required>
+									</div>
+								</div>
+								
 								
 								<div class="box-form-geral">
 									<div>

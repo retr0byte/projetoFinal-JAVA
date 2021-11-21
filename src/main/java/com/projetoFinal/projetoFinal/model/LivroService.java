@@ -23,4 +23,8 @@ public class LivroService {
 	public Map<String,Object> getLivroInfo(int id){
 		return ldao.getLivroInfo(id);
 	}
+	
+	public void inserirLivro(Livro l) {
+		ldao.inserirLivro(l);
+	}
 }
