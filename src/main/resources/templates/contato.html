@@ -104,7 +104,7 @@
 
 				</div>
 			</div>
-			<form id="formAcessivel" action="#">
+			<form id="formAcessivel" th:action="@{/contato}" th:object="${contato}" method="POST">
 				<p>
 					<span>(obrigatório)</span>
 					<br>
@@ -112,7 +112,7 @@
 					<br>
 					<span class="ex">*Exemplo: João da Silva</span>
 					<br>
-					<input type="text" name="nome" id="nome" autocomplete="off">
+					<input type="text" name="nome" id="nome" autocomplete="off" th:field="*{nm_cliente}">
 				</p>
 				<p>
 					<span>(obrigatório)</span>
@@ -121,7 +121,7 @@
 					<br>
 					<span class="ex">*Exemplo: joaosilva@gmail.com</span>
 					<br>
-					<input type="text" name="email" id="email" autocomplete="off">
+					<input type="text" name="email" id="email" autocomplete="off" th:field="*{ds_emailcliente}">
 				</p>
 				<p>
 					<span>(obrigatório)</span>
@@ -130,7 +130,7 @@
 					<br>
 					<span class="ex">*Exemplo: (13) 2141-8721</span>
 					<br>
-					<input type="text" name="tel" id="tel" autocomplete="off">
+					<input type="text" name="tel" id="tel" autocomplete="off" th:field="*{cd_telefonecliente}">
 				</p>
 				<p>
 					<span>(obrigatório)</span>
@@ -139,7 +139,7 @@
 					<br>
 					<span class="ex">*Exemplo: Gostei dos seus livros.</span>
 					<br>
-					<textarea id="msg"></textarea>
+					<textarea id="msg" th:field="*{ds_mensagem}"></textarea>
 				</p>
 				<p>
 					<input type="submit" value="Enviar">

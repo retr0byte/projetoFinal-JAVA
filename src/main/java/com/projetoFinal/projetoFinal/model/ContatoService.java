@@ -9,4 +9,8 @@ public class ContatoService {
 	@Autowired
 	ContatoDAO contdao;
 	
+	public void cadClienteInfo(Contato cont) {
+		contdao.cadClienteInfo(cont);
+	}
+	
 }

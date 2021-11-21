@@ -146,17 +146,27 @@ const assistirForm = () => {
         e.preventDefault()
         validarCampos()
     })
+    
+    const urlParams = new URLSearchParams(window.location.search);
+	const enviadoComSucesso = urlParams.get('s');
+   
+    if(enviadoComSucesso == 'true'){
+      $("#formularioContato").html(`
+          <img src="imagens/sucesso.svg" alt="">
+          <h2>Sucesso!!!</h2>
+      `)
+  
+      $("#formularioContato").addClass('success')
+      
+      setTimeout(() => {
+    	 location.replace(location.origin+location.pathname)
+      }, 3000);
+    }
 }
 
 const enviarDados = () => {
-    // função onde seriam enviados os dados via ajax
-
-    $("#formularioContato").html(`
-        <img src="imagens/sucesso.svg" alt="">
-        <h2>Sucesso!!!</h2>
-    `)
-
-    $("#formularioContato").addClass('success')
+	const form = document.getElementById("formAcessivel");
+	form.submit();
 }
 
 
