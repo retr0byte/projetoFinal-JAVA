@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http>//www.thymeleaf.org">
+	
+	<head>
+		<meta charset="utf-8">
+		<!-- meta viewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- favicon -->
+		<link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+		<!-- links css -->
+		<link rel="stylesheet" th:href="@{/css/painel.css}">
+		<!-- google fonts --> 
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<!-- fontawesome -->
+		<script src="https://kit.fontawesome.com/068c052113.js" crossorigin="anonymous"></script>
+		<!-- titulo -->
+		<title>Painel</title>
+	</head>
+	
+	<body>
+		
+		<main>
+			<div class="menu-lateral">
+				<div class="parte-menu">
+					<div class="logo-lateral">
+						<a th:href="@{/painel}"><img th:src="@{/images/logo1.png}" class="img-lateral"></a>
+					</div>
+			
+					<div class="itens-lateral">
+						<ul>
+							<li><a th:href="@{/painel}"><i class="fas fa-home"></i><span>Painel</span></a></li>
+							<li><a th:href="@{/painel/categorias}"><i class="fas fa-cog"></i><span>Categorias</span></a></li>
+							<li><a th:href="@{/painel/autores}"><i class="fas fa-cog"></i><span>Autores</span></a></li>
+							<li><a th:href="@{/painel/livros}"><i class="fas fa-cog"></i><span>Livros</span></a></li>
+						</ul>
+					</div>
+				</div>
+			
+				<div class="parte-menu">
+					<i class="fas fa-power-off"></i><a th:href="@{/}" id="btn-sair"><span>Home</span></a>
+				</div>
+			</div>
+			
+			<!-- conteudo -->
+			
+			<div id="divUniao">
+				<section>
+					<div class="centroListagem">
+						<div class="tituloListagem">
+							<h1>Listagem:</h1>
+						</div>
+						
+						<div class="novoItemListagem">
+							<div class="btnListagem">
+								<a th:href="@{/painel/autor}">Adicionar novo<i class="fas fa-plus-circle"></i></a>
+							</div>
+						</div>
+	
+						<div class="itensListagem">
+							<table>
+								<tr>
+									<th>Id</th>
+									<th>Nome</th>
+									<th>Alterar</th>
+									<th>Excluir</th>
+								</tr>
+								<tr th:each="aut : ${autores}">
+									<td th:text="${aut.cd_autor}"></td>
+									<td th:text="${aut.nm_autor}"></td>
+					
+									<td><a th:href="@{/painel/autores}"><i class="fas fa-pencil-alt"></i></a></td>
+					
+					
+					
+									<td>										
+										<form th:action="@{'/painel/del/autor/' + ${aut.cd_autor}}" method="POST">
+											<label for="submit" style="cursor:pointer;"><i class="fas fa-trash-alt"></i></label>
+											<input type="submit" id="submit" value="X" style="display:none;">
+										</form>
+									</td>
+								</tr>
+							</table>
+							
+						</div>
+	
+					</div>
+				</section>
+			</div>
+			
+		</main>
+		
+			
+	</body>
+	
+
+</html>

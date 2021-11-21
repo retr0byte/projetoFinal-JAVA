@@ -19,6 +19,12 @@ public class CategoriaController {
 	@Autowired
 	private ApplicationContext context;
 	
+	@GetMapping("/painel/categoria")
+	public String formCategoria(Model model) {
+		model.addAttribute("categoria", new Categoria());
+		return "pcriarcategoria";
+	}
+	
 	@PostMapping("/painel/categoria")
 	public String cadCategoria(
 			@ModelAttribute Categoria cat,

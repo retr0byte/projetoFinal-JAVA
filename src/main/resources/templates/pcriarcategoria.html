@@ -6,9 +6,9 @@
 		<!-- meta viewport -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- favicon -->
-		<link rel="shortcut icon" th:href="@{images/favicon.ico}" type="image/x-icon">
+		<link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
 		<!-- links css -->
-		<link rel="stylesheet" th:href="@{css/painel.css}">
+		<link rel="stylesheet" th:href="@{/css/painel.css}">
 		<!-- google fonts --> 
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 		<!-- fontawesome -->
@@ -23,15 +23,15 @@
 			<div class="menu-lateral">
 				<div class="parte-menu">
 					<div class="logo-lateral">
-						<a th:href="@{/painel}"><img th:src="@{images/logo1.png}" class="img-lateral"></a>
+						<a th:href="@{/painel}"><img th:src="@{/images/logo1.png}" class="img-lateral"></a>
 					</div>
 			
 					<div class="itens-lateral">
 						<ul>
-							<li><a th:href="@{/}"><i class="fas fa-home"></i><span>Painel</span></a></li>
-							<li><a th:href="@{/}"><i class="fas fa-cog"></i><span>Categorias</span></a></li>
-							<li><a th:href="@{/}"><i class="fas fa-cog"></i><span>Autores</span></a></li>
-							<li><a th:href="@{/}"><i class="fas fa-cog"></i><span>Livros</span></a></li>
+							<li><a th:href="@{/painel}"><i class="fas fa-home"></i><span>Painel</span></a></li>
+							<li><a th:href="@{/painel/categorias}"><i class="fas fa-cog"></i><span>Categorias</span></a></li>
+							<li><a th:href="@{/painel/autores}"><i class="fas fa-cog"></i><span>Autores</span></a></li>
+							<li><a th:href="@{/painel/livros}"><i class="fas fa-cog"></i><span>Livros</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -50,12 +50,12 @@
 
 					<div class="itensListagem">
 						<div class="formuNewPromo">
-							<form method="POST" enctype="multipart/form-data">
+							<form method="POST" th:action="@{/painel/categoria}" th:object="${categoria}">
 								<div class="box-form-geral">
 									<div>
 										<label for="nome">NOME:</label>
 									
-										<input type="text" name="nome" id="nome" required>
+										<input type="text" name="nome" id="nome" th:field="*{nm_categoria}" required>
 									</div>
 								</div>
 								<div class="box-form-geral">

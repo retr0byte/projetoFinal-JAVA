@@ -24,13 +24,13 @@ public class AutorDAO {
 	}
 	
 	public List<Map<String, Object>> getAutoresPainel() {
-		String sql = "SELECT * FROM autores";
+		String sql = "SELECT * FROM autor";
 		List<Map<String, Object>> autores = (List<Map<String, Object>>) jdbc.queryForList(sql);
 		return autores;
 	}
 	
 	public void delAutor(int id) {
-		String sql = "DELETE FROM autor WHERE id = ?";
+		String sql = "DELETE FROM autor WHERE cd_autor = ?";
 		jdbc.update(sql, new Object[] {id});
 	}
 	
