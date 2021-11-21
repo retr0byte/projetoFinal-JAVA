@@ -1,5 +1,8 @@
 package com.projetoFinal.projetoFinal.model;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
@@ -18,6 +21,17 @@ public class AutorDAO {
 	@PostConstruct
 	private void initialize() {
 		jdbc = new JdbcTemplate(dataSource);
+	}
+	
+	public List<Map<String, Object>> getAutoresPainel() {
+		String sql = "SELECT * FROM autores";
+		List<Map<String, Object>> autores = (List<Map<String, Object>>) jdbc.queryForList(sql);
+		return autores;
+	}
+	
+	public void delAutor(int id) {
+		String sql = "DELETE FROM autor WHERE id = ?";
+		jdbc.update(sql, new Object[] {id});
 	}
 	
 }

@@ -4,7 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.projetoFinal.projetoFinal.model.Categoria;
 import com.projetoFinal.projetoFinal.model.CategoriaService;
@@ -15,5 +18,16 @@ public class CategoriaController {
 	
 	@Autowired
 	private ApplicationContext context;
+	
+	@PostMapping("/painel/categoria")
+	public String cadCategoria(
+			@ModelAttribute Categoria cat,
+			Model model
+			) {
+		
+		CategoriaService cats = context.getBean(CategoriaService.class);
+		cats.cadCategoria(cat);
+		return "redirect:/painel/categorias";
+	}
 	
 }

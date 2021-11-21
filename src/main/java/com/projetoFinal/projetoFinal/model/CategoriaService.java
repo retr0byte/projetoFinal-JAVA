@@ -9,4 +9,7 @@ public class CategoriaService {
 	@Autowired
 	CategoriaDAO catdao;
 	
+	public void cadCategoria(Categoria cat) {
+		catdao.cadCategoria(cat);
+	}
 }
