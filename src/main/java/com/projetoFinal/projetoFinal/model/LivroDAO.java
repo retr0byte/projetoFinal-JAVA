@@ -56,4 +56,17 @@ public class LivroDAO {
 		
 	}
 	
+	public Map<String, Object> getLivroInfo(int id) { 
+			
+		String sql = "SELECT l.cd_livro, l.nm_livro, l.ds_livro, c.nm_categoria, a.nm_autor "
+				+ "FROM livro l, categoria c, autor a "
+				+ "WHERE l.cd_categoria = c.cd_categoria AND "
+				+ "l.cd_autor = a.cd_autor AND l.cd_livro = ?";
+		
+		Object[] obj = new Object[1];
+		obj[0] = id;
+		
+		return jdbc.queryForMap(sql,obj);
+	}
+	
 }

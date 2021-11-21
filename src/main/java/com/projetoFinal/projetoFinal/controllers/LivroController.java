@@ -46,5 +46,17 @@ public class LivroController {
 		return "index";
 			
 	}
-
+	
+	@GetMapping("/livro/{id}")
+	public String getUnicoLivro(@PathVariable("id") int id,
+								Model model){
+		LivroService ls = context.getBean(LivroService.class);
+		Map<String,Object> mapa = ls.getLivroInfo(id);
+		model.addAttribute("nm_livro",mapa.get("nm_livro"));
+		model.addAttribute("ds_livro",mapa.get("ds_livro"));
+		model.addAttribute("cd_autor",mapa.get("cd_autor"));
+		return "livro";
+			
+	}
+	
 }

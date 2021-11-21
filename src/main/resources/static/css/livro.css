@@ -117,6 +117,10 @@ body {
 	color: black;
 }
 
+.info-livro i {
+	font-size: 225px;
+}
+
 /*responsivo*/
 
 @media (max-width: 492px)

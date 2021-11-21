@@ -19,4 +19,8 @@ public class LivroService {
 	public List<Map<String, Object>> getAllLivros(){
 		return ldao.getAllLivros();
 	}
+	
+	public Map<String,Object> getLivroInfo(int id){
+		return ldao.getLivroInfo(id);
+	}
 }
