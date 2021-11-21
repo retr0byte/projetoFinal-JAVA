@@ -34,4 +34,12 @@ public class AutorDAO {
 		jdbc.update(sql, new Object[] {id});
 	}
 	
+	/*criaautor*/
+	
+	public void cadAutor(Autor aut) {
+		String sql = "INSERT INTO autor (nm_autor) VALUES (?)";
+		
+		jdbc.update(sql, new Object[] { aut.getNm_autor() });
+	}
+	
 }

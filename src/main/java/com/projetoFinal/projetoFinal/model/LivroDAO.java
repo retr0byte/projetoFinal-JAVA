@@ -56,7 +56,7 @@ public class LivroDAO {
 		
 	}
 	
-	public Map<String, Object> getLivroInfo(int id) { 
+		public Map<String, Object> getLivroInfo(int id) { 
 			
 		String sql = "SELECT l.cd_livro, l.nm_livro, l.ds_livro, c.nm_categoria, a.nm_autor "
 				+ "FROM livro l, categoria c, autor a "
@@ -80,6 +80,26 @@ public class LivroDAO {
 		obj[3] = livro.getCd_categoria();
 		jdbc.update(sql, obj);
 
+	}
+	
+	public List<Map<String, Object>> getLivrosPainel(){
+		String sql = "SELECT l.cd_livro, l.nm_livro, c.nm_categoria, a.nm_autor "
+				+ "FROM livro l, categoria c, autor a "
+				+ "WHERE l.cd_categoria = c.cd_categoria AND "
+				+ "l.cd_autor = a.cd_autor "
+				+ "order by l.cd_livro asc";
+		
+		List<Map<String, Object>> livros = (List<Map<String, Object>>) jdbc.queryForList(sql);
+		return livros;
+		
+	}
+	
+	/*excluirlivro*/
+	public void deleteLivro(int id) {
+		String sql = "DELETE FROM livro Where cd_livro = ?";
+		Object[] obj = new Object[1];
+		obj[0] = id;
+		jdbc.update(sql, obj);
 	}
 	
 }

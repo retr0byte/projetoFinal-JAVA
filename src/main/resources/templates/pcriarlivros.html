@@ -8,7 +8,7 @@
 		<!-- favicon -->
 		<link rel="shortcut icon" th:href="@{images/favicon.ico}" type="image/x-icon">
 		<!-- links css -->
-		<link rel="stylesheet" th:href="@{css/painel.css}">
+		<link rel="stylesheet" th:href="@{../css/painel.css}">
 		<!-- google fonts --> 
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 		<!-- fontawesome -->
@@ -23,7 +23,7 @@
 			<div class="menu-lateral">
 				<div class="parte-menu">
 					<div class="logo-lateral">
-						<a th:href="@{/painel}"><img th:src="@{images/logo1.png}" class="img-lateral"></a>
+						<a th:href="@{/painel}"><img th:src="@{../images/logo1.png}" class="img-lateral"></a>
 					</div>
 			
 					<div class="itens-lateral">
@@ -50,7 +50,7 @@
 
 					<div class="itensListagem">
 						<div class="formuNewPromo">
-							<form action="#" th:action="@{/pcriarlivros}" method="post" th:object="${pcriarlivros}" enctype="multipart/form-data">
+							<form action="#" th:action="@{/painel/livro}" method="post" th:object="${pcriarlivros}" enctype="multipart/form-data">
 								<div class="box-form-geral">
 									<div>
 										<label for="nome">NOME:</label>

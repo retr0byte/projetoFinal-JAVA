@@ -32,21 +32,7 @@ public class ProjetoFinalController {
 		return "livro";
 	}
 	
-	@GetMapping("/pcategorias")
-	public String pcategorias() {
-		return "pcategorias";
-	}
-	
-	@GetMapping("/plivros")
-	public String plivros() {
-		return "plivros";
-	}
-	
-	@GetMapping("/pcriarcataut")
-	public String pcriarcataut() {
-		return "pcriarcataut";
-	}
-	
+
 	@GetMapping("/sucesso")
 	public String sucesso() {
 		return "sucesso";

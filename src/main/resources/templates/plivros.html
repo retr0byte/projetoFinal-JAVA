@@ -52,7 +52,7 @@
 						
 						<div class="novoItemListagem">
 							<div class="btnListagem">
-								<a th:href="@{/pcriarlivros}">Adicionar novo<i class="fas fa-plus-circle"></i></a>
+								<a th:href="@{/painel/livro}">Adicionar novo<i class="fas fa-plus-circle"></i></a>
 							</div>
 						</div>
 	
@@ -78,8 +78,8 @@
 					
 									<td>
 										<form th:action="@{'/painel/del/livro/' + ${liv.cd_livro}}" method="POST">
-											<label for="submit" style="cursor:pointer;"><i class="fas fa-trash-alt"></i></label>
-											<input type="submit" id="submit" value="X" style="display:none;">
+											
+											<input type="submit" id="submit" value="X">
 										</form>
 									</td>
 								</tr>

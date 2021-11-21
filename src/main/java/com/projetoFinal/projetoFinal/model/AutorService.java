@@ -20,4 +20,9 @@ public class AutorService {
 		adao.delAutor(id);
 	}
 	
+	/*criaautor*/
+	public void cadAutor(Autor aut) {
+		adao.cadAutor(aut);
+	}
+	
 }

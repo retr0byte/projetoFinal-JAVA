@@ -24,7 +24,6 @@
 	width: 20vw;
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
 	background-color: #343a40;
 }
 
@@ -179,6 +178,15 @@ main {
 .fa-trash-alt {
 	color: #D9450D;
 	font-size: 25px;
+}
+
+#submit {
+	width: 30px;
+    height: 30px;
+    font-size: 19px;
+    background-color: #D9450D;
+    border: none;
+    cursor: pointer;
 }
 
 /**/

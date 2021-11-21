@@ -9,11 +9,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.projetoFinal.projetoFinal.model.Autor;
 import com.projetoFinal.projetoFinal.model.AutorService;
+import com.projetoFinal.projetoFinal.model.Categoria;
+import com.projetoFinal.projetoFinal.model.CategoriaService;
 
 @Controller
 @ComponentScan("com.projetoFinal.projetoFinal.model")
@@ -37,4 +40,21 @@ public class AutorController {
 		return "redirect:/painel/autores";
 	}
 	
+	
+	@GetMapping("/painel/autor")
+	public String formAutor(Model model) {
+		model.addAttribute("autor", new Autor());
+		return "pcriarautor";
+	}
+	
+	@PostMapping("/painel/autor")
+	public String cadAutor(
+			@ModelAttribute Autor aut,
+			Model model
+			) {
+		
+		AutorService auts = context.getBean(AutorService.class);
+		auts.cadAutor(aut);
+		return "redirect:/painel/autores";
+	}
 }

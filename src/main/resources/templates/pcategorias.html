@@ -73,9 +73,9 @@
 					
 					
 									<td>
-										<form th:action="@{'/painel/del/categoria/' + ${cat.cd_categoria}}" method="POST">
-											<label for="submit" style="cursor:pointer;"><i class="fas fa-trash-alt"></i></label>
-											<input type="submit" id="submit" value="X" style="display:none;">
+										<form th:action="@{'/painel/del/categoria/' + ${cat.cd_categoria}}" method="post">
+							
+											<input type="submit" id="submit" value="X">
 										</form>
 									</td>
 								</tr>

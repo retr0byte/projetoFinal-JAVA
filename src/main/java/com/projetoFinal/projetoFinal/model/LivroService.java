@@ -27,4 +27,13 @@ public class LivroService {
 	public void inserirLivro(Livro l) {
 		ldao.inserirLivro(l);
 	}
+	
+	public List<Map<String, Object>> getLivrosPainel(){
+		return ldao.getLivrosPainel();
+	}
+	
+	/*deletelivro*/
+	public void deleteLivro(int id) {
+		ldao.deleteLivro(id);
+	}
 }

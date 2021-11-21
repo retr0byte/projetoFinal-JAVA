@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.projetoFinal.projetoFinal.model.CategoriaService;
 import com.projetoFinal.projetoFinal.model.Livro;
 import com.projetoFinal.projetoFinal.model.LivroService;
 
@@ -61,18 +62,36 @@ public class LivroController {
 			
 	}
 	
-	@GetMapping("/pcriarlivros")
+	@GetMapping("/painel/livro")
 	public String formLivro(Model model) {
 		model.addAttribute("pcriarlivros",new Livro());
 		return "pcriarlivros";
 	}
 	
-	@PostMapping("/pcriarlivros")
+	@PostMapping("/painel/livro")
 	public String postLivro(@ModelAttribute Livro li,
 							Model model) {
 		LivroService ls = context.getBean(LivroService.class);
 		ls.inserirLivro(li);
+		return "redirect:/painel/livros";
+	}
+	
+	/*listar livros no painel*/
+	@GetMapping("/painel/livros")
+	public String listarLivrosPainel(Model model){
+		LivroService ls = context.getBean(LivroService.class);
+		List<Map<String, Object>> livros = ls.getLivrosPainel();
+		model.addAttribute("livros",livros);
 		return "plivros";
+			
+	}
+	
+	/*delete Livro*/
+	@PostMapping("/painel/del/livro/{id}")
+	public String apagarLivro(@PathVariable("id") int id) {
+		LivroService ls = context.getBean(LivroService.class);
+		ls.deleteLivro(id);
+		return "redirect:/painel/livros";
 	}
 	
 }
