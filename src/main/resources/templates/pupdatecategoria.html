@@ -14,7 +14,7 @@
         <!-- fontawesome -->
         <script src="https://kit.fontawesome.com/068c052113.js" crossorigin="anonymous"></script>
         <!-- titulo -->
-        <title>Painel</title>
+        <title>Painel editar</title>
     </head>
     
     <body>
@@ -41,49 +41,35 @@
                 </div>
             </div>
             
-            <!-- conteudo -->
-            
             <div id="divUniao">
                 <section>
                     <div class="centroListagem">
-                        <div class="tituloListagem">
-                            <h1>Listagem:</h1>
-                        </div>
-                        
-                        <div class="novoItemListagem">
-                            <div class="btnListagem">
-                                <a th:href="@{/painel/categoria}">Adicionar novo<i class="fas fa-plus-circle"></i></a>
-                            </div>
-                        </div>
-    
-                        <div class="itensListagem">
-                            <table>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Nome</th>
-                                    <th>Alterar</th>
-                                    <th>Excluir</th>
-                                </tr>
-                                <tr th:each="cat : ${categorias}">
-                                    <td th:text="${cat.cd_categoria}"></td>
-                                    <td th:text="${cat.nm_categoria}"></td>
-                    
-                                    <td><a th:href="@{'/painel/upd/categoria/' + ${cat.cd_categoria}}"><i class="fas fa-pencil-alt"></i></a></td>
-                    
-                    
-                    
-                                    <td>
-                                        <form th:action="@{'/painel/del/categoria/' + ${cat.cd_categoria}}" method="post">
-                            
-                                            <input type="submit" id="submit" value="X">
-                                        </form>
-                                    </td>
-                                </tr>
-                            </table>
-                            
-                        </div>
-    
+                    <div class="tituloListagem">
+                        <h1>Editar registro:</h1>
                     </div>
+
+                    <div class="itensListagem">
+                        <div class="formuNewPromo">
+                            <form method="POST" action="#" th:action="@{'/painel/upd/categoria/' + ${id}}" th:object="${categoria}">
+                                <div class="box-form-geral">
+                                    <div>
+                                        <label for="nome">NOME:</label>
+                                    
+                                        <input type="text" name="nome" id="nome" th:field="*{nm_categoria}" required>
+                                    </div>
+                                </div>
+                                <div class="box-form-geral">
+                                    <div>
+                                        <button type="submit">Editar registro</button>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+
+                </div>
                 </section>
             </div>
             
