@@ -102,4 +102,16 @@ public class LivroDAO {
 		jdbc.update(sql, obj);
 	}
 	
+	public List<Map<String, Object>> buscarLivro(Livro liv){
+		String sql = "SELECT l.cd_livro, l.nm_livro, c.nm_categoria, a.nm_autor "
+				+ "FROM livro l, categoria c, autor a "
+				+ "WHERE l.cd_categoria = c.cd_categoria AND "
+				+ "l.cd_autor = a.cd_autor AND "
+				+ "l.nm_livro LIKE '%"+liv.getNm_livro()+"%'"
+				+ "order by l.nm_livro";
+		
+		List<Map<String, Object>> livros = (List<Map<String, Object>>) jdbc.queryForList(sql);
+		return livros;
+	}
+	
 }

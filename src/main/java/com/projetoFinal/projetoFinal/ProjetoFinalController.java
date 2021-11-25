@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.projetoFinal.projetoFinal.model.AutorService;
 import com.projetoFinal.projetoFinal.model.CategoriaService;
+import com.projetoFinal.projetoFinal.model.Livro;
 
 @Controller
 public class ProjetoFinalController {
@@ -25,6 +26,7 @@ public class ProjetoFinalController {
 		List<Map<String, Object>> listaCategorias = cs.listarCategoriasMenu();
 		List<Map<String, Object>> listaAutores = as.listarAutoresMenu();
 		
+		model.addAttribute("objLivro", new Livro());
 		model.addAttribute("listaCategorias", listaCategorias);
 		model.addAttribute("listaAutores", listaAutores);
 		return "quemSomos";

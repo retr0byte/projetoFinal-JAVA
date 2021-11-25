@@ -88,9 +88,9 @@
 				</nav>
 	
 				<div class="pesquisa">
-					<form method="post">
+					<form th:action="@{/livros/busca}" method="post" th:object="${objLivro}">
 						<label for="link4">Pesquisar Livro : </label>
-						<input type="text" name="pesquisa" id="link4">
+						<input type="text" name="pesquisa" id="link4" th:field="*{nm_livro}">
 						<button type="submit"><i class="fas fa-search"></i></button>
 					</form>
 				</div>
@@ -101,7 +101,7 @@
 		
 		<!-- section livros HTML -->
 			<section id="link1">
-				<h1 class="titulo" th:text="${'Livros' + tipoListagem}"></h1>
+				<h1 class="titulo" th:text="${tipoListagem}"></h1>
 				<div th:each="li : ${livros}" class="section-recomendados">
 					<div>
 						<a th:href="@{'/livro/' + ${li.cd_livro}}"><i class="fas fa-book"></i></a>

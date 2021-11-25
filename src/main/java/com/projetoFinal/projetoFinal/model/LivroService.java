@@ -36,4 +36,8 @@ public class LivroService {
 	public void deleteLivro(int id) {
 		ldao.deleteLivro(id);
 	}
+	
+	public List<Map<String, Object>> buscarLivro(Livro liv){
+		return ldao.buscarLivro(liv);
+	}
 }

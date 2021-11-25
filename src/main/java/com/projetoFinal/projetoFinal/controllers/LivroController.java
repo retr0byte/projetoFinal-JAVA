@@ -40,9 +40,10 @@ public class LivroController {
 		
 		tipoListagem = (tipoListagem != "livro") ? " por: "+tipoListagem : ":";
 		
+		model.addAttribute("objLivro", new Livro());
 		model.addAttribute("listaCategorias", listaCategorias);
 		model.addAttribute("listaAutores", listaAutores);
-		model.addAttribute("tipoListagem", tipoListagem);
+		model.addAttribute("tipoListagem", "Livros por: "+tipoListagem);
 		model.addAttribute("livros",livros);
 		return "livros";
 	}
@@ -57,6 +58,7 @@ public class LivroController {
 		List<Map<String, Object>> listaAutores = as.listarAutoresMenu();
 		List<Map<String, Object>> livros = ls.getAllLivros();
 		
+		model.addAttribute("objLivro", new Livro());
 		model.addAttribute("listaCategorias", listaCategorias);
 		model.addAttribute("listaAutores", listaAutores);
 		model.addAttribute("livros",livros);
@@ -74,6 +76,7 @@ public class LivroController {
 		List<Map<String, Object>> listaAutores = as.listarAutoresMenu();
 		Map<String,Object> mapa = ls.getLivroInfo(id);
 		
+		model.addAttribute("objLivro", new Livro());
 		model.addAttribute("listaCategorias", listaCategorias);
 		model.addAttribute("listaAutores", listaAutores);
 		model.addAttribute("nm_livro",mapa.get("nm_livro"));
@@ -113,6 +116,24 @@ public class LivroController {
 		LivroService ls = context.getBean(LivroService.class);
 		ls.deleteLivro(id);
 		return "redirect:/painel/livros";
+	}
+	
+	@PostMapping("/livros/busca")
+	public String buscarLivro(@ModelAttribute Livro liv, Model model) {
+		LivroService ls = context.getBean(LivroService.class);
+		CategoriaService cs = context.getBean(CategoriaService.class);
+		AutorService as = context.getBean(AutorService.class);
+		
+		List<Map<String, Object>> listaCategorias = cs.listarCategoriasMenu();
+		List<Map<String, Object>> listaAutores = as.listarAutoresMenu();
+		List<Map<String, Object>> livrosResultado = ls.buscarLivro(liv);
+		
+		model.addAttribute("objLivro", new Livro());
+		model.addAttribute("tipoListagem", "Resultados para a busca: "+liv.getNm_livro());
+		model.addAttribute("listaCategorias", listaCategorias);
+		model.addAttribute("listaAutores", listaAutores);
+		model.addAttribute("livros", livrosResultado);
+		return "livros";
 	}
 	
 }

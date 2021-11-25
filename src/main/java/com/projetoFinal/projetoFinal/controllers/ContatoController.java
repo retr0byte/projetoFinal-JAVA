@@ -17,6 +17,7 @@ import com.projetoFinal.projetoFinal.model.Categoria;
 import com.projetoFinal.projetoFinal.model.CategoriaService;
 import com.projetoFinal.projetoFinal.model.Contato;
 import com.projetoFinal.projetoFinal.model.ContatoService;
+import com.projetoFinal.projetoFinal.model.Livro;
 
 @Controller
 @ComponentScan("com.projetoFinal.projetoFinal.model")
@@ -33,6 +34,7 @@ public class ContatoController {
 		List<Map<String, Object>> listaCategorias = cs.listarCategoriasMenu();
 		List<Map<String, Object>> listaAutores = as.listarAutoresMenu();
 		
+		model.addAttribute("objLivro", new Livro());
 		model.addAttribute("listaCategorias", listaCategorias);
 		model.addAttribute("listaAutores", listaAutores);
 		model.addAttribute("contato", new Contato());
