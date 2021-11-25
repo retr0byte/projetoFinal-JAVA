@@ -29,6 +29,12 @@ public class AutorDAO {
 		return autores;
 	}
 	
+	public List<Map<String, Object>> listarAutoresMenu() {
+		String sql = "SELECT * FROM autor ORDER BY nm_autor";
+		List<Map<String, Object>> listaAutores = (List<Map<String, Object>>) jdbc.queryForList(sql);
+		return listaAutores;
+	}
+	
 	public void delAutor(int id) {
 		String sql = "DELETE FROM autor WHERE cd_autor = ?";
 		jdbc.update(sql, new Object[] {id});

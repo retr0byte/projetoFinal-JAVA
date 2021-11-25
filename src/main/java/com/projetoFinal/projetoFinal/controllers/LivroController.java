@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.projetoFinal.projetoFinal.model.AutorService;
 import com.projetoFinal.projetoFinal.model.CategoriaService;
 import com.projetoFinal.projetoFinal.model.Livro;
 import com.projetoFinal.projetoFinal.model.LivroService;
@@ -31,10 +32,16 @@ public class LivroController {
 			Model model
 			) {
 		LivroService ls = context.getBean(LivroService.class);
+		CategoriaService cs = context.getBean(CategoriaService.class);
+		AutorService as = context.getBean(AutorService.class);
+		List<Map<String, Object>> listaCategorias = cs.listarCategoriasMenu();
+		List<Map<String, Object>> listaAutores = as.listarAutoresMenu();
 		List<Map<String, Object>> livros = ls.getLivros(tipoListagem, id);
 		
 		tipoListagem = (tipoListagem != "livro") ? " por: "+tipoListagem : ":";
 		
+		model.addAttribute("listaCategorias", listaCategorias);
+		model.addAttribute("listaAutores", listaAutores);
 		model.addAttribute("tipoListagem", tipoListagem);
 		model.addAttribute("livros",livros);
 		return "livros";
@@ -44,7 +51,14 @@ public class LivroController {
 	@GetMapping("/")
 	public String listarTodosLivros(Model model){
 		LivroService ls = context.getBean(LivroService.class);
+		CategoriaService cs = context.getBean(CategoriaService.class);
+		AutorService as = context.getBean(AutorService.class);
+		List<Map<String, Object>> listaCategorias = cs.listarCategoriasMenu();
+		List<Map<String, Object>> listaAutores = as.listarAutoresMenu();
 		List<Map<String, Object>> livros = ls.getAllLivros();
+		
+		model.addAttribute("listaCategorias", listaCategorias);
+		model.addAttribute("listaAutores", listaAutores);
 		model.addAttribute("livros",livros);
 		return "index";
 			
@@ -54,7 +68,14 @@ public class LivroController {
 	public String getUnicoLivro(@PathVariable("id") int id,
 								Model model){
 		LivroService ls = context.getBean(LivroService.class);
+		CategoriaService cs = context.getBean(CategoriaService.class);
+		AutorService as = context.getBean(AutorService.class);
+		List<Map<String, Object>> listaCategorias = cs.listarCategoriasMenu();
+		List<Map<String, Object>> listaAutores = as.listarAutoresMenu();
 		Map<String,Object> mapa = ls.getLivroInfo(id);
+		
+		model.addAttribute("listaCategorias", listaCategorias);
+		model.addAttribute("listaAutores", listaAutores);
 		model.addAttribute("nm_livro",mapa.get("nm_livro"));
 		model.addAttribute("ds_livro",mapa.get("ds_livro"));
 		model.addAttribute("cd_autor",mapa.get("cd_autor"));

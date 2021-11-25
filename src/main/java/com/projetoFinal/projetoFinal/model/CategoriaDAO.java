@@ -45,4 +45,14 @@ public class CategoriaDAO {
 		jdbc.update(sql, obj);
 	}
 	
+	
+	public List<Map<String, Object>> listarCategoriasMenu(){
+		String sql = "SELECT * from categoria "	
+					 + "order by nm_categoria";
+		
+		List<Map<String, Object>> listaCategorias = (List<Map<String, Object>>) jdbc.queryForList(sql);
+		return listaCategorias;
+		
+	}
+	
 }

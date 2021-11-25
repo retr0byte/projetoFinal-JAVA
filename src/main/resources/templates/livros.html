@@ -64,20 +64,27 @@
 				<nav class="menu_responsivo">
 	
 					<ul>
-				        <li class="li_f" id="oi"><a href="#" class="foco">Categorias</a>
-				        	<ul class="menu_categorias" id="listaFoco">
-				            	<li><a th:href="@{/catHTML}" class="foco">HTML5</a>
-				                <li><a th:href="@{/catCSS}" class="foco">CSS3</a>
-				                <li><a th:href="@{/catPHP}" class="foco">PHP</a>
-				                <li><a 	th:href="@{/catJS}" class="foco">javascript</a>
-				            </ul>
-				        </li>
-					        
-				      	<li class="li_f"><a th:href="@{/contato}">Contato</a></li>
-				        <li class="li_f"><a th:href="@{/quemSomos}">Quem somos</a></li>
-				        <li class="li_f"><a th:href="@{/melhoresTemas}">Melhores temas</a></li>
-				        <li class="li_f"><a th:href="@{/painel}">Painel</a></li>
-				    </ul>
+			        <li class="li_f" id="oi"><a href="#" class="foco">Categorias</a>
+			        	<ul class="menu_categorias" id="listaFoco">
+			            	<li th:each="categ : ${listaCategorias}">
+			            		<a th:href="@{'/livros/categorias/' + ${categ.cd_categoria}}" class="foco" th:text="${categ.nm_categoria}"></a>
+		            		</li>
+			            </ul>
+			        </li>
+				        
+			      	<li class="li_f"><a th:href="@{/contato}">Contato</a></li>
+			        <li class="li_f"><a th:href="@{/quemSomos}">Quem somos</a></li>
+			        
+			        <li class="li_f" id="oi"><a href="#" class="foco">Autores</a>
+			        	<ul class="menu_categorias" id="listaFoco">
+			            	<li th:each="aut : ${listaAutores}">
+			            		<a th:href="@{'/livros/autores/' + ${aut.cd_autor}}" class="foco" th:text="${aut.nm_autor}"></a>
+		            		</li>
+			            </ul>
+			        </li>
+			        
+			        <li class="li_f"><a th:href="@{/painel}">Painel</a></li>
+			    </ul>
 				</nav>
 	
 				<div class="pesquisa">

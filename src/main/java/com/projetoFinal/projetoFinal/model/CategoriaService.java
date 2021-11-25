@@ -23,4 +23,8 @@ public class CategoriaService {
 	public void deleteCategoria(int id) {
 		catdao.deleteCategoria(id);
 	}
+	
+	public List<Map<String, Object>> listarCategoriasMenu(){
+		return catdao.listarCategoriasMenu();
+	}
 }

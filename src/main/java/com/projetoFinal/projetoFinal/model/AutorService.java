@@ -16,6 +16,10 @@ public class AutorService {
 		return adao.getAutoresPainel();
 	}
 	
+	public List<Map<String, Object>> listarAutoresMenu(){
+		return adao.listarAutoresMenu();
+	}
+	
 	public void delAutor(int id) {
 		adao.delAutor(id);
 	}
