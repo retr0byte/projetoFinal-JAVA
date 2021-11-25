@@ -57,4 +57,21 @@ public class AutorController {
 		auts.cadAutor(aut);
 		return "redirect:/painel/autores";
 	}
+	
+	@GetMapping("/painel/upd/autor/{id}")
+	public String formAtualizarAutor(@PathVariable("id") int id, Model model) {
+		AutorService auts = context.getBean(AutorService.class);
+		Map<String, Object> at = auts.getAutor(id);
+		Autor autores = new Autor(id,at.get("nm_Autor").toString());
+		model.addAttribute("autor", autores);
+		model.addAttribute("id", id);
+		return "pupdateautor";
+	}
+	
+	@PostMapping("/painel/upd/autor/{id}")
+	public String atualizarAutor(@PathVariable("id") int id, Model model, @ModelAttribute Autor auts) {
+		AutorService aut = context.getBean(AutorService.class);
+		aut.atualizarAutor(id, auts);
+		return "redirect:/painel/autores";
+	}
 }

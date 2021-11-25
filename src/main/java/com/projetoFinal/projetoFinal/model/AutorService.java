@@ -29,4 +29,12 @@ public class AutorService {
 		adao.cadAutor(aut);
 	}
 	
+	public void atualizarAutor(int id, Autor aut) {
+		adao.atualizarAutor(id, aut);
+	}
+	
+	public Map<String, Object> getAutor(int id){
+		return adao.getAutor(id);
+	}
+	
 }
