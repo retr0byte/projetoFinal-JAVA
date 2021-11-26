@@ -40,4 +40,12 @@ public class LivroService {
 	public List<Map<String, Object>> buscarLivro(Livro liv){
 		return ldao.buscarLivro(liv);
 	}
+	
+	public void atualizarLivro(int id, Livro livro) {
+		ldao.atualizarLivro(id, livro);
+	}
+	
+	public Map<String, Object> getLivro(int id){
+		return ldao.getLivro(id);
+	}
 }

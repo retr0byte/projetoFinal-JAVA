@@ -142,4 +142,35 @@ public class LivroController {
 		return "livros";
 	}
 	
+	@GetMapping("painel/upd/livro/{id}")
+	public String formAtualizarLivro(@PathVariable("id") int id, Model model) {
+		LivroService ls = context.getBean(LivroService.class);
+        CategoriaService cs = context.getBean(CategoriaService.class);
+        AutorService as = context.getBean(AutorService.class);
+        List<Map<String, Object>> listaCategorias = cs.listarCategoriasMenu();
+        List<Map<String, Object>> listaAutores = as.listarAutoresMenu();
+        Map<String,Object> li = ls.getLivro(id);
+        int autl = (int) li.get("cd_autor");
+        int catl = (int) li.get("cd_categoria");
+        Livro l = new Livro(id, autl, catl, li.get("nm_livro").toString(),li.get("ds_livro").toString());
+
+
+
+        model.addAttribute("listaAutores", listaAutores);
+        model.addAttribute("listaCategorias", listaCategorias);
+        model.addAttribute("id", id);
+        model.addAttribute("livro",l);
+        
+        
+        return "pupdatelivro"; 
+	}
+	
+	@PostMapping("/painel/upd/livro/{id}")
+	public String atualizarLivro(@PathVariable("id") int id, Model model, @ModelAttribute Livro livs) {
+		LivroService ls = context.getBean(LivroService.class);
+		ls.atualizarLivro(id, livs);
+		
+		return "redirect:/painel/livros";
+		
+	}
 }

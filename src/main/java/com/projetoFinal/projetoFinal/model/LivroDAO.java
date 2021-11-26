@@ -114,4 +114,21 @@ public class LivroDAO {
 		return livros;
 	}
 	
+	public Map<String, Object> getLivro(int id){
+		String sql = "SELECT * FROM livro where livro.cd_Livro = ?";
+		Object[] obj = new Object[1];
+		obj[0] = id;
+		return jdbc.queryForMap(sql,obj);
+	}
+	
+	public void atualizarLivro(int id, Livro livro) {
+		String sql = "UPDATE livro SET nm_Livro = ?, ds_Livro = ?, cd_Autor = ?, cd_Categoria = ?  WHERE cd_Livro = ?";
+		Object[] obj = new Object[5];
+		obj[0] = livro.getNm_livro();
+		obj[1] = livro.getDs_livro();
+		obj[2] = livro.getCd_autor();
+		obj[3] = livro.getCd_categoria();
+		obj[4] = id;
+		jdbc.update(sql,obj);
+	}
 }

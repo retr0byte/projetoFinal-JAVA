@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http>//www.thymeleaf.org">
+    
+    <head>
+        <meta charset="utf-8">
+        <!-- meta viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- favicon -->
+        <link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon">
+        <!-- links css -->
+        <link rel="stylesheet" th:href="@{/css/painel.css}">
+        <!-- google fonts --> 
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <!-- fontawesome -->
+        <script src="https://kit.fontawesome.com/068c052113.js" crossorigin="anonymous"></script>
+        <!-- titulo -->
+        <title>Painel editar</title>
+    </head>
+    
+    <body>
+       
+        <main>
+            <div class="menu-lateral">
+                <div class="parte-menu">
+                    <div class="logo-lateral">
+                        <a th:href="@{/painel}"><img th:src="@{/images/logo1.png}" class="img-lateral"></a>
+                    </div>
+            
+                    <div class="itens-lateral">
+                        <ul>
+                            <li><a th:href="@{/painel}"><i class="fas fa-home"></i><span>Painel</span></a></li>
+                            <li><a th:href="@{/painel/categorias}"><i class="fas fa-cog"></i><span>Categorias</span></a></li>
+                            <li><a th:href="@{/painel/autores}"><i class="fas fa-cog"></i><span>Autores</span></a></li>
+                            <li><a th:href="@{/painel/livros}"><i class="fas fa-cog"></i><span>Livros</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="parte-menu">
+                    <i class="fas fa-power-off"></i><a th:href="@{/}" id="btn-sair"><span>Home</span></a>
+                </div>
+            </div>
+            
+            <div id="divUniao">
+                <section>
+                    <div class="centroListagem">
+                    <div class="tituloListagem">
+                        <h1>Editar registro:</h1>
+                    </div>
+
+                    <div class="itensListagem">
+                        <div class="formuNewPromo">
+                            <form method="POST" action="#" th:action="@{'/painel/upd/livro/' + ${id}}" th:object="${livro}" enctype="multipart/form-data">
+                                <div class="box-form-geral">
+                                    <div>
+                                        <label for="nome">NOME:</label>
+                                    
+                                        <input type="text" name="nome" id="nome" th:field="*{nm_livro}" required>
+                                   
+                                    </div>
+                                    
+                                    
+                                </div>
+                                
+                                <div class="box-form-geral">
+                                    <div>
+                                        <label for="descricao">DESCRIÇÃO:</label>
+
+                                        <textarea th:field="{ds_livro}"></textarea>
+                                    </div>
+                                </div>
+							
+                                <div class="box-form-geral">
+                                    <div>
+                                        <label for="autor">AUTOR:</label>
+                                        <select id="autor" th:field="{cd_autor}">
+                                            <option th:each="aut : ${listaAutores}" th:text="${aut.nm_autor}" th:value="${aut.cd_autor}"></option>
+                                        </select>
+                                    </div>
+                                </div>
+						
+                                <div class="box-form-geral">
+                                    <div>
+                                        <label for="categoria">CATEGORIA:</label>
+                                        <select id="categoria" th:field="*{cd_categoria}">
+                                            <option th:each="cat : ${listaCategorias}" th:text="${cat.nm_categoria}" th:value="${cat.cd_categoria}"></option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="box-form-geral">
+                                    <div>
+                                        <button type="submit">Editar registro</button>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+
+                </div>
+                </section>
+            </div>
+            
+        </main>
+         
+            
+    </body>
+    
+
+</html>
