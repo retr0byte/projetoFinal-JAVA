@@ -88,6 +88,12 @@ public class LivroController {
 	
 	@GetMapping("/painel/livro")
 	public String formLivro(Model model) {
+		CategoriaService cs = context.getBean(CategoriaService.class);
+		AutorService as = context.getBean(AutorService.class);
+		List<Map<String, Object>> listaCategorias = cs.listarCategoriasMenu();
+		List<Map<String, Object>> listaAutores = as.listarAutoresMenu();
+		model.addAttribute("listaCategorias", listaCategorias);
+		model.addAttribute("listaAutores", listaAutores);
 		model.addAttribute("pcriarlivros",new Livro());
 		return "pcriarlivros";
 	}

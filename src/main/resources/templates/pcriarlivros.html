@@ -70,16 +70,19 @@
 								<div class="box-form-geral">
 									<div>
 										<label for="autor">AUTOR:</label>
-									
-										<input type="text" th:field="*{cd_autor}" id="autor" required>
+										<select id="autor" th:field="*{cd_autor}">
+											<option th:each="aut : ${listaAutores}" th:text="${aut.nm_autor}" th:value="${aut.cd_autor}"></option>	
+										</select>
 									</div>
 								</div>
 								
 								<div class="box-form-geral">
 									<div>
 										<label for="categoria">CATEGORIA:</label>
-									
-										<input type="text" th:field="*{cd_categoria}" id="categoria" required>
+										<select id="categoria" th:field="*{cd_categoria}">
+											<option th:each="cat : ${listaCategorias}" th:text="${cat.nm_categoria}" th:value="${cat.cd_categoria}"></option>	
+										</select>
+										
 									</div>
 								</div>
 								
