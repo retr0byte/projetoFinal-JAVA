@@ -48,4 +48,19 @@ public class AutorDAO {
 		jdbc.update(sql, new Object[] { aut.getNm_autor() });
 	}
 	
+	public Map<String, Object> getAutor(int id){
+		String sql = "SELECT * FROM autor where autor.cd_Autor = ?";
+		Object[] obj = new Object[1];
+		obj[0] = id;
+		return jdbc.queryForMap(sql,obj);
+	}
+	
+	public void atualizarAutor(int id, Autor autor) {
+		String sql = "UPDATE autor SET nm_Autor = ? WHERE cd_Autor = ?";
+		Object[] obj =  new Object[2];
+		obj[0] = autor.getNm_autor();
+		obj[1] = id;
+		jdbc.update(sql, obj);
+	}
+	
 }

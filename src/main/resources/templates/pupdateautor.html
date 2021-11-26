@@ -14,7 +14,7 @@
 		<!-- fontawesome -->
 		<script src="https://kit.fontawesome.com/068c052113.js" crossorigin="anonymous"></script>
 		<!-- titulo -->
-		<title>Painel</title>
+		<title>Painel criar</title>
 	</head>
 	
 	<body>
@@ -41,49 +41,35 @@
 				</div>
 			</div>
 			
-			<!-- conteudo -->
-			
 			<div id="divUniao">
 				<section>
 					<div class="centroListagem">
-						<div class="tituloListagem">
-							<h1>Listagem:</h1>
-						</div>
-						
-						<div class="novoItemListagem">
-							<div class="btnListagem">
-								<a th:href="@{/painel/autor}">Adicionar novo<i class="fas fa-plus-circle"></i></a>
-							</div>
-						</div>
-	
-						<div class="itensListagem">
-							<table>
-								<tr>
-									<th>Id</th>
-									<th>Nome</th>
-									<th>Alterar</th>
-									<th>Excluir</th>
-								</tr>
-								<tr th:each="aut : ${autores}">
-									<td th:text="${aut.cd_autor}"></td>
-									<td th:text="${aut.nm_autor}"></td>
-					
-									<td><a th:href="@{'/painel/upd/autor/' + ${aut.cd_autor}}"><i class="fas fa-pencil-alt"></i></a></td>
-					
-					
-					
-									<td>										
-										<form th:action="@{'/painel/del/autor/' + ${aut.cd_autor}}" method="POST">
-										
-											<input type="submit" id="submit" value="X">
-										</form>
-									</td>
-								</tr>
-							</table>
+					<div class="tituloListagem">
+						<h1>Editar registro:</h1>
+					</div>
+
+					<div class="itensListagem">
+						<div class="formuNewPromo">
+							<form method="POST" th:action="@{'/painel/upd/autor/' + ${id}}" th:object="${autor}" action="#">
+								<div class="box-form-geral">
+									<div>
+										<label for="nome">NOME:</label>
+									
+										<input type="text" name="nome" id="nome" th:field="*{nm_autor}" required>
+									</div>
+								</div>
+								<div class="box-form-geral">
+									<div>
+										<button type="submit">Editar registro</button>
+									</div>
+									
+								</div>
+							</form>
 							
 						</div>
-	
 					</div>
+
+				</div>
 				</section>
 			</div>
 			
