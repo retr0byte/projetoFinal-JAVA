@@ -66,14 +66,14 @@
                                     <div>
                                         <label for="descricao">DESCRIÇÃO:</label>
 
-                                        <textarea th:field="{ds_livro}"></textarea>
+                                        <textarea th:field="*{ds_livro}"></textarea>
                                     </div>
                                 </div>
 							
                                 <div class="box-form-geral">
                                     <div>
                                         <label for="autor">AUTOR:</label>
-                                        <select id="autor" th:field="{cd_autor}">
+                                        <select id="autor" th:field="*{cd_autor}">
                                             <option th:each="aut : ${listaAutores}" th:text="${aut.nm_autor}" th:value="${aut.cd_autor}"></option>
                                         </select>
                                     </div>
